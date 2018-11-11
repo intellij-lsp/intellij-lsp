@@ -1,3 +1,3 @@
-resolvers += Resolver.url("jetbrains-sbt", url(s"http://dl.bintray.com/jetbrains/sbt-plugins"))(Resolver.ivyStylePatterns)
+resolvers += Resolver.bintrayIvyRepo("jetbrains", "sbt-plugins")
 
-addSbtPlugin("org.jetbrains" % "sbt-idea-plugin" % "1.0.1")
+addSbtPlugin("org.jetbrains" % "sbt-idea-plugin" % "2.2.8")
