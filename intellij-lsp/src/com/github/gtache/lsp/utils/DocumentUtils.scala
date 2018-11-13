@@ -6,7 +6,6 @@ import com.intellij.openapi.util.TextRange
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.util.DocumentUtil
 import org.eclipse.lsp4j.Position
-import scala.math.min
 
 /**
   * Various methods to convert offsets / logical position / server position
@@ -71,8 +70,7 @@ object DocumentUtils {
   def LSPPosToOffset(editor: Editor, pos: Position): Int = {
     val line = pos.getLine
     val doc = editor.getDocument
-    val lineText = doc.getText(DocumentUtil.getLineTextRange(doc, line))
-    val lineTextForPosition = lineText.substring(0, min(lineText.length, pos.getCharacter))
+    val lineTextForPosition = doc.getText(DocumentUtil.getLineTextRange(doc, line)).substring(0, pos.getCharacter)
     val tabs = StringUtil.countChars(lineTextForPosition, '\t')
     val tabSize = editor.getSettings.getTabSize(editor.getProject)
     val column = tabs * tabSize + lineTextForPosition.length - tabs
