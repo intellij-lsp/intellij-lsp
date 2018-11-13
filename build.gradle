@@ -25,17 +25,3 @@ dependencies {
 
 apply plugin: 'scala'
 apply plugin: 'java'
-
-sourceSets {
-    main {
-        scala {
-            srcDirs = ['src']
-        }
-        java {
-            srcDirs = []
-        }
-        resources {
-            srcDirs = ['resources']
-        }
-    }
-}
