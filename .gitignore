@@ -49,3 +49,6 @@ fabric.properties
 *.ps1
 target/
 build/
+
+# Scala compiler user settings
+.idea/hydra.xml
