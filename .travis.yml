@@ -2,6 +2,9 @@ language: java
 
 addons:
   artifacts: true
+    paths:
+    - ./build/distributions
+    - ./build/libs
 
 jdk:
 - oraclejdk8
