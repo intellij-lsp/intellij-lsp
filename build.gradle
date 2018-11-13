@@ -38,6 +38,7 @@ apply plugin: 'java'
 jacocoTestReport {
     reports {
         xml.enabled = true
+        xml.setDestination(file("${buildDir}/reports/jacoco/test/report.xml"))
     }
 }
 
@@ -46,6 +47,7 @@ test {
     jacoco {
         append = false
     }
+    finalizedBy jacocoTestReport
 }
 
 // IDE run and debugging
