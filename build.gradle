@@ -23,10 +23,10 @@ dependencies {
     compile 'org.scala-lang:scala-compiler:2.12.4'
     compile 'org.scala-lang:scala-library:2.12.4'
     testImplementation(
-            'org.junit.jupiter:junit-jupiter-api:5.1.0'
+            'org.junit.jupiter:junit-jupiter-api:5.2.0'
     )
     testRuntimeOnly(
-            'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+            'org.junit.jupiter:junit-jupiter-engine:5.2.0'
     )
 }
 
