@@ -6,6 +6,10 @@ addons:
       - ./build/distributions
       - ./build/libs
 
+notifications:
+  email:
+    on_success: never # default: change
+
 jdk:
 - oraclejdk8
 - openjdk8
