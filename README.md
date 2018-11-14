@@ -1,6 +1,7 @@
 # intellij-lsp
 
 [![Build Status](https://travis-ci.org/intellij-lsp/intellij-lsp-plugin.svg?branch=develop)](https://travis-ci.org/intellij-lsp/intellij-lsp-plugin)
+[![ZIP distribution](https://img.shields.io/badge/dev%20zip%20distribution-AWS%20S3-green.svg)](https://s3-eu-west-1.amazonaws.com/intellij-lsp-plugin/develop/lastSuccessfulBuild/LSP+Support.zip)
 
 Plugin adding support for Language Server Protocol for IntelliJ since version 2017.3     
 This plugin should be compatible with any JetBrains IDE (tested successfully on IntelliJ, PyCharm and CLion)    
