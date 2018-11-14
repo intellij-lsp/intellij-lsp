@@ -5,6 +5,9 @@ addons:
     paths:
       - ./build/distributions
       - ./build/libs
+    target_paths:
+      - /${TRAVIS_BRANCH}/${TRAVIS_BUILD_NUMBER}
+      - /${TRAVIS_BRANCH}/lastSuccessfulBuild
 
 notifications:
   email:
