@@ -6,9 +6,21 @@ addons:
       - ./build/distributions
       - ./build/libs
 
+notifications:
+  email:
+    on_success: never # default: change
+
 jdk:
 - oraclejdk8
 - openjdk8
+
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+
+after_script:
+- JACOCO_SOURCE_PATH="src/main/scala src/main/java" ./cc-test-reporter format-coverage build/reports/jacoco/test/jacocoTestReport.xml --input-type jacoco
+- ./cc-test-reporter upload-coverage
 
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
