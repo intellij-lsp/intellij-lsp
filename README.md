@@ -43,7 +43,7 @@ Concretely, what you can do with IntelliJ at the moment :
 - Rename a symbol with the basic refactor action (Shift+F6 by default) (you can also rename using Shift+Alt+F6 as a backup if needed)         
 ![Rename](https://github.com/gtache/intellij-lsp/blob/master/doc/images/rename.gif "RenameGif")
 - Go to definition of a symbol, using Ctrl+Click (may need several tries for the first time)    
-- See usages / references of a symbol, using Shift+Alt+F7 on it or Ctrl+Click on its definition, and go to these locations by clicking on them in the generated window (may need several tries to make Ctrl-click work as for definition)    
+- See usages / references of a symbol, using Shift+Alt+F7 on it or Ctrl+Click on its definition, and go to these locations by clicking on them in the generated window.   
 Ctrl-click :     
 ![CtrlClick](https://github.com/gtache/intellij-lsp/blob/master/doc/images/ctrlClick.gif "CtrlClickGif")    
 Shift+Alt+F7 :     
@@ -59,7 +59,7 @@ Shift+Alt+F7 :
 
 ## Add a Language Server
 This plugin supports communicating with multiple and different language servers at the same time.    
-To add a supported language server, you can either create a plugin (see intellij-lsp-dotty) which extends this plugin and extend LanguageServerDefinition or instantiate a concrete subclass of it and register it, or simply go to IntelliJ/file/settings/Languages & Frameworks/Language Server Protocol and fill the required informations. You can specify multiple extensions for one server by separating them with a semicolon. (example : ts;js)        
+To add a supported language server, you can either create a plugin which extends this plugin and extend LanguageServerDefinition or instantiate a concrete subclass of it and register it, or simply go to IntelliJ/file/settings/Languages & Frameworks/Language Server Protocol and fill the required informations. You can specify multiple extensions for one server by separating them with a semicolon. (example : ts;js)        
 Note that the settings will always override a possible LSP plugin for the same file extension.    
 You can also configure the timeouts for the requests (if you see timeouts warning in the log for example), depending on your computer.    
 Settings:    
@@ -85,16 +85,12 @@ With plugin.xml containing
 ```
 
 The current concrete classes are :      
-- ArtifactLanguageServerDefinition : This definition uses an artifact location (like a Maven one), retrieves the jar using Coursier and launches the given main class with the given arguments.
-- RawCommandServerDefinition : This definition simply runs the command given.
-- ExeLanguageServerDefinition : Basically a more convenient way to write a RawCommand, it splits the file to execute and the arguments given to it.    
-**Note that all those classes will use the server stdin/stdout to communicate**
+- **ArtifactLanguageServerDefinition** : This definition uses an artifact location (like a Maven one), retrieves the jar using Coursier and launches the given main class with the given arguments.
+- **RawCommandServerDefinition** : This definition simply runs the command given.
+- **ExeLanguageServerDefinition** : Basically a more convenient way to write a RawCommand, it splits the file to execute and the arguments given to it.    
+> Note that all those classes will use the server stdin/stdout to communicate
 
 If you need/want to write an other implementation, you will need to at least implement the createConnectionProvider method, which instantiates and returns a StreamConnectionProvider (which can be basically anything as long as it gets you the input and output stream to the server). You can also implement custom logic in the start and stop methods of the server definition if needed.
 
 ## Further extensions
 You can add a custom LSPIconProvider to provide custom icons for the completion/symbols items or for the server status. You need to register an LSPIconProvider extension in your plugin.xml and implement the required methods (or delegate to the default provider).
-
-
-
-There is a skeleton of a more concrete LSP plugin for Dotty with Syntax Highlighting in the intellij-lsp-dotty folder. Most of the code is taken and adapted from https://github.com/JetBrains/intellij-scala
