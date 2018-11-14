@@ -1,10 +1,12 @@
 ### Note
 
-This software is based on intellij-lsp (https://github.com/gtache/intellij-lsp) by Guillaume Tâche (https://github
-.com/gtache)
+This software is based on scala version of intellij-lsp (https://github.com/gtache/intellij-lsp) by Guillaume Tâche (https://github.com/gtache).
 
+All new produced code is licensed under Apache 2.0 License with IntelliJ LSP Community (https://github.com/intellij-lsp) copyrights.
 
 ### Copyrights
+
+> original intellij-lsp by Guillaume Tâche
 
 Copyright 2017-2018 Guillaume Tâche
 
