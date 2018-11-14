@@ -19,8 +19,10 @@ license {
     strictCheck true
     exclude '**/*.xml'
     exclude '**/*.properties'
+    exclude '**/*.test'
     ignoreFailures true
 }
+license.mapping('java','SLASHSTAR_STYLE')
 
 dependencies {
     compile group: 'org.eclipse.lsp4j', name: 'org.eclipse.lsp4j', version: '0.4.1'
