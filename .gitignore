@@ -52,3 +52,5 @@ build/
 
 # Scala compiler user settings
 .idea/hydra.xml
+
+.idea/sonarlint/
