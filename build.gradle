@@ -58,6 +58,12 @@ test {
     finalizedBy jacocoTestReport
 }
 
+//compileTestJava.dependsOn(compileTestScala)
+
+task testJar(type: Jar) {
+    from sourceSets.test.output
+}
+
 // IDE run and debugging
 
 runIde {

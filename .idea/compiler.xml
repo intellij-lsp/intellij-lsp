@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="LSP_main" target="1.8" />
       <module name="LSP_test" target="1.8" />
+      <module name="testServer_main" target="1.8" />
+      <module name="testServer_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
