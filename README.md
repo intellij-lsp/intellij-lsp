@@ -1,4 +1,6 @@
-# intellij-lsp
+# intellij-lsp DEPRECATED
+
+Moved to https://github.com/ballerina-platform/lsp4intellij
 
 [![Build Status](https://travis-ci.org/intellij-lsp/intellij-lsp-plugin.svg?branch=develop)](https://travis-ci.org/intellij-lsp/intellij-lsp-plugin)
 [![ZIP distribution](https://img.shields.io/badge/dev%20zip%20distribution-AWS%20S3-green.svg)](https://s3-eu-west-1.amazonaws.com/intellij-lsp-plugin/develop/lastSuccessfulBuild/LSP+Support.zip)
